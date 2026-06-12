@@ -33,20 +33,6 @@ export const useImageStore = defineStore('image', () => {
       });
   }
 
-  async function fetchImage(id: string) {
-    loading.value = true
-
-    await fetch(`https://picsum.photos/id/${id}/info`)
-        .then(res => res.json())
-        .then(data => {
-          images.value = [data];
-          currentIndex.value = 0;
-        })
-        .finally(() => {
-          loading.value = false;
-        });
-  }
-
   async function setPage(val: number) {
     if(val > maxPage) {
       page.value = maxPage
