@@ -1,0 +1,84 @@
+@use 'variables/colors' as *;
+@use 'variables/font-sizes' as *;
+
+.pagination-button {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  padding: 3px 8px;
+  color: $secondary;
+}
+
+.pagination-button.active {
+  border: 1px solid $selected;
+  color: $selected;
+  border-radius: 3px;
+}
+
+.pagination-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-control {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 5px;
+}
+
+.pagination-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.pagination-body > .pagination-item {
+  flex: 0 0 150px;
+}
+
+.pagination-item {
+  border-radius: 5px;
+  background: $background;
+}
+.pagination-item-img-container {
+  border-radius: 5px 5px 0 0;
+  aspect-ratio: 1 / 1;
+  width: 150px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pagination-item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pagination-item-info {
+  padding: 10px;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-black {
+  color: black;
+}
+
+@media (min-width: 992px) {
+  .pagination-body > .pagination-item {
+    flex: 0 0 300px;
+  }
+
+  .pagination-item-img-container {
+    width: 300px;
+  }
+}

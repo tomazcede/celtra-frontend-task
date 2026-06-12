@@ -1,0 +1,63 @@
+@use 'variables/colors' as *;
+
+.image-section {
+  margin: 10px 0;
+  padding: 10px;
+  background: $background;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+.image-info {
+  display: flex;
+  justify-content: start;
+  flex-grow: 1;
+  color: $primary;
+}
+
+.image-item {
+  width: 100%;
+  border-radius: 10px;
+}
+.image-header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.image-header > :first-child {
+  grid-column: 1 / -1;
+  margin-bottom: 10px;
+}
+
+.image-carets {
+  justify-content: start;
+  display: flex;
+  justify-items: center;
+  gap: 10px;
+}
+
+@media (min-width: 992px) {
+  .image-section {
+    flex-direction: row;
+  }
+
+  .image-item {
+    width: 600px;
+  }
+
+  .image-header {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .image-header > :first-child {
+    grid-column: auto;
+  }
+
+  .image-carets {
+    justify-content: center;
+    gap: 50px;
+  }
+}
